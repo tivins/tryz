@@ -95,9 +95,12 @@ fi
 writeLog "Create shard data."
 rsync -av docky/template/ docky/shard-data/
 
+# ----------------------------
+# Overrides
+# ----------------------------
 writeLog "Add our overrides."
-cp docker-compose.override.yml docky/docker-compose.override.yml
-cp postinstall.sql docky/shard-data/mariadb/initdb.d/ZZ_shard01_a.sql
+cp data/docker-compose.override.yml     docky/docker-compose.override.yml
+cp data/postinstall.sql                 docky/shard-data/mariadb/initdb.d/ZZ_shard01_a.sql
 
 # ----------------------------
 # Prepare/Build Docker
