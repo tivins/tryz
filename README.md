@@ -1,7 +1,7 @@
 # Tryz
 Documentation & Scripts to build and edit Ryzom Core
 
-Based on [Ryzom Core](https://github.com/ryzom/ryzomcore), [Docky](https://github.com/nimetu/docky).
+Based on [ryzom/ryzomcore](https://github.com/ryzom/ryzomcore), [nimetu/docky](https://github.com/nimetu/docky).
 
 ### Documentation :
 
