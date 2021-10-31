@@ -92,13 +92,17 @@ then
     writeLog "Done."
 fi
 
+writeLog "Create shard data."
+rsync -av docky/template/ docky/shard-data/
+
+writeLog "Add our overrides."
+cp docker-compose.override.yml docky/docker-compose.override.yml
+cp postinstall.sql docky/shard-data/mariadb/initdb.d/ZZ_shard01_a.sql
+
 # ----------------------------
 # Prepare/Build Docker
 # ----------------------------
 cd docky
-
-writeLog "Copy shard data."
-rsync -av template/ shard-data/
 
 writeLogSU "Build Docky..."
 sudo docker-compose --no-cache build
