@@ -10,5 +10,7 @@ https://github.com/tivins/tryz/wiki
 ### Build Server :
 
 ```sh
-wget https://raw.githubusercontent.com/tivins/tryz/main/tryz.sh && sh tryz.sh
+git clone tivins/tryz 
+cd tryz
+sh tryz.sh
 ```
