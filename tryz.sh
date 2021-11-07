@@ -8,7 +8,7 @@ tryz_data_dir="$tryz_root_dir/data"
 
 case $1 in
 
-  install)
+  build-server)
     echo "Installation..."
     . scripts/install.sh
     ;;
@@ -19,11 +19,23 @@ case $1 in
     sudo docker-compose up
     ;;
 
+  build-client)
+    echo "Building client..."
+
+    echo "Not yet ready. exit."
+    exit
+
+    # todo move in a separated script
+    cd docker/client
+    sudo docker build $nocache -t $imageName .
+    sudo docker run --rm -it \
+        --env-file ../assets/envfile \
+        -v $sharedDir:/data \
+        $imageName
+    ;;
+
   *)
     echo "Unknown paramater"
     ;;
 esac
 exit
-
-
-

@@ -5,7 +5,8 @@ Based on [nimetu/docky](https://github.com/nimetu/docky).
 
 ----
 
-**CAUTION !** this project is still in progress, and does not build/run the full set yet.<br>
+**CAUTION !**<br>
+This project is still *in progress*, and __does not build/run__ the full set yet.<br>
 Folders, files, containers are subject to be changed at any time.
 
 ----
@@ -15,7 +16,7 @@ Folders, files, containers are subject to be changed at any time.
 ```sh
 git clone git@github.com:tivins/tryz.git
 cd tryz
-./tryz.sh install
+./tryz.sh build-server
 ./tryz.sh run
 ```
 
