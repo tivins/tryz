@@ -6,7 +6,7 @@ Based on [nimetu/docky](https://github.com/nimetu/docky).
 ----
 
 **CAUTION !** this project is still in progress, and does not build/run the full set yet.<br>
-Folders, files, containers are subjet to be changed soon.
+Folders, files, containers are subject to be changed at any time.
 
 ----
 
