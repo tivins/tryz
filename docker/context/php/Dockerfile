@@ -9,9 +9,10 @@ RUN apt-get update && \
     apt-get remove -y --purge libpng-dev zlib1g-dev && \
     apt-get clean -y
 
-RUN useradd -ms /bin/bash ryzom && \
-    echo "ryzom:ryzom" | chpasswd && \
-    adduser ryzom sudo
+RUN \
+    useradd -ms /bin/bash admin                         && \
+    echo "admin:admin" | chpasswd                       && \
+    adduser admin sudo
 
-USER ryzom
+USER admin
 WORKDIR /var/www
