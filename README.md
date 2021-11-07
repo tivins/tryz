@@ -3,6 +3,12 @@
 Scripts to build and run [Ryzom Core 4](https://github.com/ryzom/ryzomcore).<br>
 Based on [nimetu/docky](https://github.com/nimetu/docky).
 
+----
+
+**CAUTION !** this project is still in progress, and does not build/run the full set yet.
+
+----
+
 ## Usage
 
 ```sh
@@ -31,7 +37,7 @@ The `config` folder contains the configuration files for the servers inside Dock
 and the creation of shards' databases (nel, ams, &hellip;).
 
     config
-    ├── db
+    ├── db            # Databases condifurations
     │   ├── initdb.d  # SQL files executed on install in alphabetical order.
     │   └── my.cnf    # MariaDB configuration file.
     └── tryz.cnf      # Ecosystem configuration file.
