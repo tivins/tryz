@@ -1,0 +1,47 @@
+version: '3.5'
+
+networks:
+  default:
+
+services:
+
+  db:
+    image: tryz/db
+    build:
+      context: ./context/db
+    environment:
+      MYSQL_ROOT_PASSWORD: tryzrootpassword
+    volumes:
+      - ../config/db/my.cnf:/etc/mysql/conf.d/99-custom.cnf:ro
+      - ../config/db/initdb.d:/docker-entrypoint-initdb.d:ro
+      - ../data/db/lib:/var/lib/mysql
+      - ../data/db/log:/var/log/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+#  phpmyadmin:
+#    image: phpmyadmin
+#    restart: always
+#    ports:
+#      - 8080:80
+#    environment:
+#      - PMA_ARBITRARY=1
+
+  php:
+    image: tryz/php
+    build:
+      context: ./context/php
+
+  web:
+    image: tryz/httpd
+    build:
+      context: ./context/httpd
+
+  shard01:
+    image: tryz/shard
+    build:
+      context: ./context/ryzom-server
