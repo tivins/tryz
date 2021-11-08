@@ -10,7 +10,7 @@ case $1 in
 
   build-server)
     echo "Installation..."
-    . scripts/install.sh
+    . scripts/host-install.sh
     ;;
 
   run)

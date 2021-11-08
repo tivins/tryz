@@ -13,7 +13,7 @@ mkdir -p "$tryz_data_dir/db/log"
 mkdir -p "$tryz_data_dir/php/public"
 
 # Download and extract Ryzom core sources.
-. scripts/getsources.sh
+. scripts/host-get-sources.sh
 
 # Copy PHP files
 rsync -a "$tryz_src_dir/web/public_php/" "$tryz_data_dir/php/public/"
